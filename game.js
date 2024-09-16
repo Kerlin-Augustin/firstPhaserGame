@@ -1,9 +1,9 @@
 class mainScene {
   preload(){
-
+    this.load.image('player', 'assets/player.png')
   }
   create(){
-
+    this.player = this.physics.add.sprite(100, 100, 'player')
   }
 
   update(){
