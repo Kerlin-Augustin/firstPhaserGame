@@ -10,7 +10,9 @@ class mainScene {
   }
 
   update(){
-    
+    if(this.physics.overlap(this.player, this.coin)){
+      this.hit();
+    }
     this.score = 0;
     let style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
