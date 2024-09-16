@@ -7,15 +7,15 @@ class mainScene {
     this.player = this.physics.add.sprite(100, 110, 'player')
     this.coin = this.physics.add.sprite(300, 300, 'coin')
     this.arrow = this.input.keyboard.createCursorKeys()
+    this.score = 0;
+    let style = { font: '20px Arial', fill: '#fff' };
+    this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
   }
 
   update(){
     if(this.physics.overlap(this.player, this.coin)){
       this.hit();
     }
-    this.score = 0;
-    let style = { font: '20px Arial', fill: '#fff' };
-    this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
     if(this.arrow.right.isDown){
       this.player.x += 3
     } else if (this.arrow.left.isDown){
