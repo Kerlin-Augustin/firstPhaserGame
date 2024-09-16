@@ -10,6 +10,7 @@ class mainScene {
   }
 
   update(){
+    
     this.score = 0;
     let style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
@@ -24,7 +25,18 @@ class mainScene {
       this.player.y -= 3
     }
   }
+
+  hit(){
+    this.coin.x = Phaser.Math.Between(100, 600);
+    this.coin.y = Phaser.Math.Between(100, 300);
+
+    this.score += 10
+
+    this.scoreText.setText('score: ' + this.score)
+  }
 }
+
+  
 
 new Phaser.Game({
   width: 700, // Width of the game in pixels
